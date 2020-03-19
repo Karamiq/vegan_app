@@ -1,15 +1,15 @@
 package com.example.vegandetective.model;
 
 public class Product {
-    private String item, description;
+    private String itemName, description;
     private int calories;
     private int picture;
     private boolean isVegan, isVegetarian, isCarnivore;
 
 
-    public Product(String item, String description, int calories, int picture, boolean isVegan, boolean isVegetarian, boolean isCarnivore) {
+    public Product(String itemName, String description, int calories, int picture, boolean isVegan, boolean isVegetarian, boolean isCarnivore) {
         this.description = description;
-        this.item = item;
+        this.itemName = itemName;
         this.isVegan = isVegan;
         this.calories = calories;
         this.picture = picture;
@@ -39,8 +39,8 @@ public class Product {
         return isCarnivore;
     }
 
-    public String getItem() {
-        return this.item;
+    public String getItemName() {
+        return this.itemName;
     }
 
     public int getPicture() {
