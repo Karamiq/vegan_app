@@ -4,14 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProductListView">
+    tools:context=".ItemListView">
 
-    <ListView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/product_list_view"
+        android:orientation="vertical">
 
-        />
+
+        <ListView
+            android:id="@+id/product_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="496dp"
+            android:choiceMode="singleChoice"
+            android:background="@animator/bg_key"/>
+
+    </LinearLayout>
 
 
 </LinearLayout>

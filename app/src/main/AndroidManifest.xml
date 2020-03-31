@@ -9,7 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProductListView"></activity>
+        <activity android:name=".DeleteItemsActivity"></activity>
+        <activity
+            android:name=".NavigationActivity"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".UpdateProductsActivity" />
+        <activity
+            android:name=".BasicHome"
+            android:label="@string/title_activity_basic_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ItemDetailsActivity" />
+        <activity android:name=".ItemListView" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

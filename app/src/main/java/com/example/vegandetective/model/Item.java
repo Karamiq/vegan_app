@@ -1,13 +1,15 @@
 package com.example.vegandetective.model;
 
-public class Product {
+import java.io.Serializable;
+
+public class Item implements Serializable {
     private String itemName, description;
     private int calories;
     private int picture;
-    private boolean isVegan, isVegetarian, isCarnivore;
+    private boolean isVegan, isVegetarian, isCarnivore, isSelected;
 
 
-    public Product(String itemName, String description, int calories, int picture, boolean isVegan, boolean isVegetarian, boolean isCarnivore) {
+    public Item(String itemName, String description, int calories, int picture, boolean isVegan, boolean isVegetarian, boolean isCarnivore) {
         this.description = description;
         this.itemName = itemName;
         this.isVegan = isVegan;
@@ -15,6 +17,7 @@ public class Product {
         this.picture = picture;
         this.isVegetarian = isVegetarian;
         this.isCarnivore = isCarnivore;
+        this.isSelected = false;
 
 
     }
@@ -49,6 +52,18 @@ public class Product {
 
     public int getCalories() {
         return this.calories;
+    }
+
+    public void isSelectedChange() {
+        if (this.isSelected) {
+            this.isSelected = false;
+        } else {
+            this.isSelected = true;
+        }
+    }
+
+    public boolean isSelected() {
+        return this.isSelected;
     }
 }
 
