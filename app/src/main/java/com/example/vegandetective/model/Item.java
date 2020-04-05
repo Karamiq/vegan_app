@@ -2,7 +2,7 @@ package com.example.vegandetective.model;
 
 import java.io.Serializable;
 
-public class Item implements Serializable {
+public class Item implements Serializable,Comparable<Item> {
     private String itemName, description;
     private int calories;
     private int picture;
@@ -21,6 +21,19 @@ public class Item implements Serializable {
 
 
     }
+    public Item(String itemName, String description, int calories, int picture, boolean isVegan, boolean isVegetarian, boolean isCarnivore,boolean isSelected) {
+        this.description = description;
+        this.itemName = itemName;
+        this.isVegan = isVegan;
+        this.calories = calories;
+        this.picture = picture;
+        this.isVegetarian = isVegetarian;
+        this.isCarnivore = isCarnivore;
+        this.isSelected = isSelected;
+
+
+    }
+
 
     public String getDescription() {
         return description;
@@ -64,6 +77,21 @@ public class Item implements Serializable {
 
     public boolean isSelected() {
         return this.isSelected;
+    }
+
+    public void unSelectedChange(){
+        this.isSelected = false;
+    }
+    public void selectedChange(){
+        this.isSelected = true;
+    }
+
+    @Override
+    public int compareTo(Item item) {
+        if (getItemName() == null || item.getItemName() == null) {
+            return 0;
+        }
+        return getItemName().compareTo(item.getItemName());
     }
 }
 

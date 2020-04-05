@@ -17,6 +17,7 @@ public class Diet implements Serializable {
 
 
     public void addMeal(Meal meal) {
+
         this.meals.add(meal);
     }
 
@@ -40,7 +41,6 @@ public class Diet implements Serializable {
     }
 
     public Meal getMealByName(String mealName) {
-        Meal mealtemp;
         for (Meal meal : this.meals) {
             if (meal.getMealName().equals(mealName)) {
                 return meal;

@@ -14,20 +14,13 @@
 
 
         <ListView
-            android:id="@+id/product_list_view"
+            android:id="@+id/meal_recommended_view"
             android:layout_width="match_parent"
-            android:layout_height="496dp"
-            android:choiceMode="singleChoice"
-            android:background="@animator/bg_key"/>
+            android:layout_height="590dp"
+            android:background="@animator/bg_key"
+            android:choiceMode="singleChoice" />
 
-
-        <Button
-            android:id="@+id/recommended_meals_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="25dp"
-            android:onClick="recommendMeMealsButton"
-            android:text="@string/recommend_me_meals" />
     </LinearLayout>
+
 
 </LinearLayout>

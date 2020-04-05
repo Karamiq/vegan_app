@@ -18,17 +18,28 @@ import com.example.vegandetective.model.User;
 public class MainActivity extends AppCompatActivity {
 
     //initialize user data
-
-
     User user;
     Diet veganDiet;
     Meal dolmaMeal;
-    Meal makhlamaMeal;
-
+    Meal salad;
+    Meal avocadoOnToast;
+    Meal fatimaMeal;
     Item tomatoes;
     Item paprika;
     Item onion;
     Item potatoes;
+    Item broccoli;
+    Item oliveOil;
+    Item avocado;
+    Item lemon;
+    Item chilliFlkes;
+    Item oat;
+    Item banana;
+    Item water;
+    Item almondMilk;
+    Item soyMilk;
+    Item vanilla;
+    Item chiaSeed;
 
 
     @Override
@@ -37,36 +48,84 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         user = new User("Karam");
         veganDiet = new Diet("Vegan");
-        dolmaMeal = new Meal("Dolma", "we mix tomatoes with paprika with onion and rice");
-        makhlamaMeal = new Meal("Khalecha", "We mix I don't know yet");
+        dolmaMeal = new Meal("Dolma", "we mix tomatoes with paprika with onion and rice", R.drawable.dolma, 90);
+        salad = new Meal("Salad", "cut everything into pieces and mix them together ", R.drawable.salad, 14);
+        avocadoOnToast = new Meal("Avocado on Toast", "Cut the avocado in half" +
+                " and carefully remove its stone, then scoop out the flesh into a bowl. Squeeze in " +
+                "the lemon juice then mash with a fork to your desired texture. Season to taste with" +
+                " sea salt, black pepper and chilli flakes. Toast your bread, drizzle over the oil " +
+                "then pile the avocado on top.", R.drawable.avocadoontoast, 15);
+        fatimaMeal = new Meal("fatima Meal", "Put the ingredients in the mixer " +
+                "until it becomes texture like cake. Then Heat the Tefal " +
+                "frying pan without oil Reduce the temperature and put the mixture in the pan and wait " +
+                "When bubbles appear, flip them over.. I love it with peanut butter and fruits",
+                R.drawable.fatima, 15);
 
-        tomatoes = new Item("tomatoes", "vegetable", 10, R.drawable.vegan, true, true, true);
-        paprika = new Item("paprika", "vegetable", 10, R.drawable.vegan, true, true, true);
-        onion = new Item("onion", "vegetable", 10, R.drawable.vegan, true, true, true);
-        potatoes = new Item("potatoes", "vegetable", 10, R.drawable.vegan, true, true, true);
+        // add items
+        tomatoes = new Item("tomatoes", "vegetable", 100, R.drawable.vegan, true, true, true);
+        paprika = new Item("paprika", "vegetable", 100, R.drawable.vegan, true, true, true);
+        onion = new Item("onion", "vegetable", 100, R.drawable.vegan, true, true, true);
+        potatoes = new Item("potatoes", "vegetable", 100, R.drawable.vegan, true, true, true);
+        broccoli = new Item("Brocooli", "Vegetable", 100, R.drawable.vegan, true, true, true);
+        oliveOil = new Item("Olive Oil", "oil", 100, R.drawable.vegan, true, true, true, true);
+        avocado = new Item("Avocado", "Vegetable", 100, R.drawable.vegan, true, true, true, true);
+        lemon = new Item("Lemon", "Vegetable", 100, R.drawable.vegan, true, true, true, true);
+        chilliFlkes = new Item("Chilli Flakes ", "Vegetable", 10, R.drawable.vegan, true, true, true, true);
+        oat = new Item("Oat", "Vegetable", 10, R.drawable.vegan, true, true, true, true);
+        banana = new Item("Banana", "Vegetable", 10, R.drawable.vegan, true, true, true, true);
+        water = new Item("Water", "Liquid", 10, R.drawable.vegan, true, true, true, true);
+        almondMilk = new Item("Almond Milk", "Milk", 10, R.drawable.vegan, true, true, true, true);
+        soyMilk = new Item("Soy Milk ", "Milk", 10, R.drawable.vegan, true, true, true, true);
+        vanilla = new Item("Vanilla ", "Spice", 10, R.drawable.vegan, true, true, true, true);
+        chiaSeed = new Item("Chia Seed", "Vegetable", 10, R.drawable.vegan, true, true, true, true);
 
-        makhlamaMeal.addProduct(tomatoes);
-        makhlamaMeal.addProduct(paprika);
-        makhlamaMeal.addProduct(onion);
-        makhlamaMeal.addProduct(potatoes);
 
-        dolmaMeal.addProduct(tomatoes);
-        dolmaMeal.addProduct(paprika);
-        dolmaMeal.addProduct(onion);
+        // add items to meal Salad
+        salad.addItem(tomatoes);
+        salad.addItem(paprika);
+        salad.addItem(onion);
 
+        // add items to Meal Dolma
+        dolmaMeal.addItem(tomatoes);
+        dolmaMeal.addItem(paprika);
+        dolmaMeal.addItem(onion);
+        dolmaMeal.addItem(potatoes);
+
+        // add items to Meal avocadoOnToast
+        avocadoOnToast.addItem(avocado);
+        avocadoOnToast.addItem(oliveOil);
+        avocadoOnToast.addItem(lemon);
+        avocadoOnToast.addItem(chilliFlkes);
+
+        // add to fatima meal
+        fatimaMeal.addItem(oat);
+        fatimaMeal.addItem(banana);
+        fatimaMeal.addItem(water);
+        fatimaMeal.addItem(almondMilk);
+        fatimaMeal.addItem(vanilla);
+        fatimaMeal.addItem(chiaSeed);
+
+
+        // add meals to Vegan Diet
         veganDiet.addMeal(dolmaMeal);
-        veganDiet.addMeal(makhlamaMeal);
+        veganDiet.addMeal(salad);
+        veganDiet.addMeal(avocadoOnToast);
+        veganDiet.addMeal(fatimaMeal);
 
         user.addDiet(veganDiet);
+
+        user.setSelectedDiet(veganDiet);
 
         for (int i = 0; i < user.getDietByName("Vegan").getMealByName("Dolma").getItems().size() - 1; i++) {
             System.out.println(user.getDietByName("Vegan").getMealByName("Dolma").getItems().get(i));
         }
+
+        switchActivity();
     }
 
-    public void switchActivity(View view) {
-        Intent intent = new Intent(this, NavigationActivity.class);
-        intent.putExtra("user", (Parcelable) user);
+    public void switchActivity() {
+        Intent intent = new Intent(this, AddMeal.class);
+        intent.putExtra("user", user);
         startActivity(intent);
         finish();
     }
@@ -100,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void onclickSaveUser(View v){
+    public void onclickSaveUser(View v) {
 
     }
 

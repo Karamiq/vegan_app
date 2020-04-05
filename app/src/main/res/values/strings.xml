@@ -33,4 +33,25 @@
 
     <string name="home_second">Home Second</string>
     <string name="textview">TextView</string>
+    <string name="todo">TODO</string>
+    <string name="recommend_me_meals">Recommend me Meals</string>
+    <string name="caloriesequals">\"calories: \"</string>
+    <string name="name">meal name</string>
+    <string name="meal_name">meal name</string>
+    <string name="meal_calories">meal calories</string>
+    <string name="meal_duration">meal duration</string>
+    <string name="meal_is_already_existed">This Meal is already existed!</string>
+    <string name="select_items_used_in_this_meal">Select Items used in this meal:</string>
+    <string name="meal_duration_in_minutes">Meal Duration in Minutes</string>
+    <string name="meal_description">Meal Description</string>
+    <string name="select_an_image">Select an Image</string>
+    <string name="select_items">Select Items</string>
+    <string name="save_new_meal">Save new meal</string>
+    <string name="update">update :</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="add_new_meal">Add New Meal</string>
+    <string name="items_selected">Items:</string>
+    <string name="status">status:</string>
+    <string name="deselect">Deselect</string>
+    <string name="meal_already_existed">Meal already existed</string>
 </resources>
